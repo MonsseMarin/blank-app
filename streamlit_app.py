@@ -1,13 +1,15 @@
 import streamlit as st
 
-st.title("🎈Esta es mi nueva aplicacion")
-st.write(
-    "### Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
-
-cantidad = st.slider ("selecciona la cantidad")
-
-st.write(f'la cantidad seleccionada es: {cantidad}')
-
-for i in range(cantidad):
-    st.button(f'{i}')
+def main():
+    st.title("Mi aplicacion")
+    st.write("¡Bienvenido!")
+    
+    # Entrada de usuario
+    nombre = st.text_input("Ingresa tu nombre:")
+    estado_animo = st.selectbox("¿Cómo te sientes hoy?", ["Feliz", "Triste", "Motivado", "Cansado"])
+    
+    if st.button("Mostrar mensaje"):
+        st.success(f"Hola {nombre}, parece que hoy te sientes {estado_animo}.")
+    
+if __name__ == "__main__":
+    main()
